@@ -1,0 +1,20 @@
+<div *ngIf="movieForm">
+  <form [formGroup]="movieForm" (ngSubmit)="onSubmit(currentMovie)">
+    <div>
+      <input placeholder ="Titre" type="text" formControlName="title">
+      <input placeholder="Description" type="text" formControlName="description">
+      <input placeholder="Année de sortie" type="number" formControlName="releaseYear">
+      <p><select formControlName="realisator">
+        <option *ngFor="let p of listPerson"
+                    [value]="p.id">
+                    {{p.firstName}} {{p.lastName}}</option>
+    </select></p>
+    <p><select formControlName="scenarist">
+      <option *ngFor="let p of listPerson"
+                  [value]="p.id">
+                  {{p.firstName}} {{p.lastName}}</option>
+  </select></p>
+    </div>
+    <button class="btn btn-succes" type="submit">Modifier</button>
+  </form>
+</div>

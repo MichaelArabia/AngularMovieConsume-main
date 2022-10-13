@@ -1,0 +1,13 @@
+<div *ngIf="movie">
+  <p>Titre : {{movie.title}}</p>
+  <p>Theme : {{movie.description}}</p>
+  <p>Année de sortie : {{movie.releaseYear}}</p>
+  <p>Realisator : {{movie.realisator | personnFull}}</p>
+  <p>Scenariste : {{movie.scenarist | personnFull}}</p>
+  <p *ngFor="let actor of movie.actors">
+    Acteur : {{actor | actorFull}}
+  </p>
+    <div>
+      <button class="btn btn-succes" type="submit" routerLink="/update-Movie/{{movie.id}}">Modifier</button>
+    </div>
+</div>

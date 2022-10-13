@@ -1,0 +1,25 @@
+<div *ngIf="Movies">
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th scope="col">Title</th>
+        <th scope="col">Theme</th>
+        <th scope="col">Date de sortie</th>
+      </tr>
+    </thead>
+    <tbody>
+      <ng-container *ngFor="let movie of Movies">
+        <tr>
+          <th scope="row">{{ movie.title }}</th>
+          <td>{{ movie.description }}</td>
+          <td>{{ movie.releaseYear }}</td>
+          <button type="button" class="btn btn-info" routerLink="/movie/{{movie.id}}">Detail</button>
+          <button type="button" class="btn btn-info" (click)="onDeleteMovie(movie.id)">Supprimer</button>
+        </tr>
+      </ng-container>
+      <tr>
+        <button type="button" class="btn btn-info" routerLink="/add-Movie">Ajouter un film</button>
+      </tr>
+    </tbody>
+  </table>
+</div>

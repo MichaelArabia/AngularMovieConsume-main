@@ -1,0 +1,14 @@
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+
+  <div>
+
+    <input type="text" formControlName="email">
+  </div>
+
+  <div>
+    <input type="password" formControlName="password">
+  </div>
+
+  <button class="btn btn-success" [disabled]="form.invalid" type="submit">Se connecter</button>
+
+</form>
