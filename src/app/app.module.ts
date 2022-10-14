@@ -16,6 +16,9 @@ import { actorFullName } from './components/pipes/actor.pipe';
 import { personnFullName } from './components/pipes/realisator.pipe';
 import { AddMovieComponent } from './components/add-movie/add-movie.component';
 import { UpdateMovieComponent } from './components/update-movie/update-movie.component';
+import { AddpersonComponent } from './components/add-person/add-person.component';
+import { PersonComponent } from './components/person/person.component';
+import { DetailPersonComponent } from './components/detail-person/detail-person.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +33,10 @@ import { UpdateMovieComponent } from './components/update-movie/update-movie.com
     personnFullName,
     AddMovieComponent,
     UpdateMovieComponent,
-    RegisterComponent
+    RegisterComponent,
+    AddpersonComponent,
+    PersonComponent,
+    DetailPersonComponent
   ],
   imports: [
     BrowserModule,

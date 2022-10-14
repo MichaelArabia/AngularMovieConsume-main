@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Person } from '../models/person.model';
 import { ActIn } from '../models/actorIn.model';
+import { personDTO } from '../models/DTO/personDTO.model';
 
 @Injectable({
   providedIn: 'root'
@@ -18,7 +19,7 @@ export class PersonService {
     return this._client.get<Person[]>(this._url+'/person')
   }
 
-  createPerson(person:Person):Observable<Person>{
+  createPerson(person:personDTO):Observable<personDTO>{
     let myHeaders : HttpHeaders = new HttpHeaders({
       'Authorization' : 'Bearer ' + localStorage.getItem('token')
     })

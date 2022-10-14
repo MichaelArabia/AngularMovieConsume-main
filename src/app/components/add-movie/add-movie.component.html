@@ -2,8 +2,13 @@
   <form [formGroup]="form" (ngSubmit)="onSubmit()">
     <div>
       <input placeholder ="Titre" type="text" formControlName="title">
-      <input placeholder="Description" type="text" formControlName="description">
+      <input placeholder="Theme" type="text" formControlName="description">
       <input placeholder="Année de sortie" type="number" formControlName="releaseYear">
+
+      <div>
+        <button type="submit" class="btn btn-succes" routerLink="/add-person">Ajouter une personne</button>
+      </div>
+
       <p><select formControlName="realisatorID">
         <option *ngFor="let p of listPerson"
                     [value]="p.id">

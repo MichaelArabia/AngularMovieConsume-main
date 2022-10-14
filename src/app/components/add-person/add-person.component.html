@@ -1,0 +1,14 @@
+<div>
+  <form [formGroup]="personForm" (ngSubmit)="onSubmit()">
+    <div>
+      <input placeholder="Prénom" type="text" formControlName="firstName">
+    </div>
+    <div>
+      <input placeholder="Nom" type="text" formControlName="lastName">
+    </div>
+    <div>
+      <button class="btn btn-succes" type="submit">Ajouter</button>
+    </div>
+  </form>
+
+</div>

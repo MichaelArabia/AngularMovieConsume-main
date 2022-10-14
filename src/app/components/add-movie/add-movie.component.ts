@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormArray, FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { addMovieDTO } from 'src/app/models/DTO/addMovieDTO.model';
 import { Person } from 'src/app/models/person.model';
