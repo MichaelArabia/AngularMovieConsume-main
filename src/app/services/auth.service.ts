@@ -13,7 +13,7 @@ export class AuthService {
   constructor(private client: HttpClient) { }
 
   isConneted: boolean;
-  _conntected$ = new Subject<boolean>();
+  _connected$ = new Subject<boolean>();
 
 
   private url : string = "http://localhost:53448/api/";
@@ -25,9 +25,15 @@ export class AuthService {
           localStorage.setItem('role',data.role.toString())
         }
       })
+      this.isConneted = true;
+      this._connected$.next(this.isConneted)
     }
 
-  logout(){}
+  logout(){
+    this.isConneted = false;
+    this._connected$.next(this.isConneted);
+    localStorage.clear()
+  }
 
 
 }

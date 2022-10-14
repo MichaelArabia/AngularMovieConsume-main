@@ -1,4 +1,13 @@
 <div *ngIf="person">
   <p>Prenom : {{person.firstName}}</p>
   <p>Nom : {{person.lastName}}</p>
+
+  <div *ngFor="let a of person.actAs">
+    <p>
+      Film : {{a.movieTitle}}
+    </p>
+    <p>
+      Role : {{a.role}}
+    </p>
+  </div>
 </div>

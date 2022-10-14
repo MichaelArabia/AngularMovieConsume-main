@@ -1,6 +1,6 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Observable, tap } from 'rxjs';
 import { Person } from '../models/person.model';
 import { ActIn } from '../models/actorIn.model';
 import { personDTO } from '../models/DTO/personDTO.model';
@@ -31,7 +31,7 @@ export class PersonService {
     let myHeaders : HttpHeaders = new HttpHeaders({
       'Authorization' : 'Bearer ' + localStorage.getItem('token')
     })
-    return this._client.get<Person>(this._url+"/person/" + id, { headers : myHeaders } )
+    return this._client.get<Person>(this._url+"/person/" + id, { headers : myHeaders } ).pipe(tap((data) => console.log(data) ))
   }
 
   setActorRole(setActor: ActIn):Observable<ActIn>{

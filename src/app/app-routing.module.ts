@@ -9,6 +9,7 @@ import { UpdateMovieComponent } from './components/update-movie/update-movie.com
 import { RegisterComponent } from './components/register/register.component';
 import { AddpersonComponent } from './components/add-person/add-person.component';
 import { PersonComponent } from './components/person/person.component';
+import { DetailPersonComponent } from './components/detail-person/detail-person.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch:'full'},
@@ -19,7 +20,7 @@ const routes: Routes = [
   { path: 'register', component: RegisterComponent},
   { path: 'add-Movie', component: AddMovieComponent},
   { path: 'update-Movie/:id', component: UpdateMovieComponent},
-  { path: 'detail-person/:id', component:PersonComponent},
+  { path: 'person/:id', component: DetailPersonComponent},
   { path: 'person', component: PersonComponent},
   { path: 'add-person', component: AddpersonComponent},
   { path: '**', redirectTo: '404'}
